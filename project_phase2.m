@@ -4,9 +4,9 @@ clc; clear all; close all;
 
 UNIT_METER = 1/100;
 %% 1. Set Your Desired Wrist Position Here :)
-X = 134.98;
-Y = 175.91;
-Z = 150;
+X = 200.76;
+Y = 115.91;
+Z = 50;
 
 %% 2. LOAD MANIPULATOR PART FILES
 %Load STL files of the chess pieces and the manipulator links
@@ -86,7 +86,7 @@ T03 = T02*T23;
 
 R01 = T01(1:3,1:3); R02 = T02(1:3,1:3); R03 = T03(1:3,1:3);
 P01 = T01(1:3,4); P02 = T02(1:3,4); P03 = T03(1:3,4);
-
+disp(P03);
 newV{2} = R01*V{2};
 newV{2} = newV{2} + repmat(P01,[1 length(newV{2}(1,:))]);
 newV{3} = R02*V{3};
