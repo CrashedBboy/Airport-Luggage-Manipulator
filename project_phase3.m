@@ -205,7 +205,7 @@ for s = 1:n_samples
         newV{5} = newV{5} + repmat(P04,[1 length(newV{5}(1,:))]);
         set(p(5),'Vertices',newV{5}(1:3,:)');
     end
-    drawnow
+    % drawnow
 
     % Capture the plot as an image
     frame = getframe(gcf);
@@ -214,9 +214,9 @@ for s = 1:n_samples
     
     % Write to the GIF File
     if s == 1
-        imwrite(imind, cm, 'luggage_manipulator.gif', 'gif', 'Loopcount', inf, 'DelayTime', 1/FPS);
+        % imwrite(imind, cm, 'luggage_manipulator.gif', 'gif', 'Loopcount', inf, 'DelayTime', 1/FPS);
     else
-        imwrite(imind, cm, 'luggage_manipulator.gif', 'gif', 'WriteMode', 'append', 'DelayTime', 1/FPS);
+        % imwrite(imind, cm, 'luggage_manipulator.gif', 'gif', 'WriteMode', 'append', 'DelayTime', 1/FPS);
     end
     hold on;
 end
@@ -225,7 +225,7 @@ hold off;
 clf; % clear the figure
 
 %% 5. Joint Profile Visualization
-
+set(gcf,'Position',[0 0 1920/6 1080/4]);
 for j = 1:size(j_pos,2)
     % position
     x = real_time;
